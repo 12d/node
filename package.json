@@ -1,0 +1,22 @@
+{
+  "name": "nd-web",
+  "version": "1.0.0",
+  "description": "node web project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb",
+    "react"
+  ],
+  "author": "cxw",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.3.5",
+    "promise": "^7.1.1"
+  }
+}
