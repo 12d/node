@@ -4,32 +4,36 @@
  * @description
  */
 var conn = require('../conn/default');
-var Record;
-function createTables(mongoose){
+var mongoose = require('mongoose');
+var Hotel;
+function createTables(){
     var hotelSchema = new mongoose.Schema({
         name:String,
         star:Number,
         owner:String,
         price:Number
     });
-    return mongoose.model('Hotels', hotelSchema);
+    return mongoose.model('HotelModel', hotelSchema);
 }
 
 module.exports = {
     ready: function(callback){
         var self = this;
-        conn.when(function(){
-            Record = createTables();
+        conn.then(function(){
+            Hotel = createTables();
             callback.call(self)
         });
     },
     insert: function(data){
-        Record.save(new Record(data));
-    },
-    delete: function (data) {
-        
-    },
-    query: function (condition) {
+        var rc = new Hotel(data);
+        rc.save((err, ok)=>{
 
+        })
+    },
+    delete: function (condition, callback) {
+        Hotel.remove(condition, callback);
+    },
+    query: function (condition, callback) {
+        Hotel.find(condition, callback);
     }
 }
