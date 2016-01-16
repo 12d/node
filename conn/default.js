@@ -11,5 +11,5 @@ var promise = new Promise((resolve, reject)=>{
     });
 
 
-mongoose.connect('mongodb://10.32.154.14/test');
+mongoose.connect('mongodb://localhost/test');
 module.exports = promise;
