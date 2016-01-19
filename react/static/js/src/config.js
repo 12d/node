@@ -2,8 +2,8 @@ require.config({
     baseUrl: 'static/js/',
     paths: {
         text: 'lib/text',
-        Vue: 'lib/vue.min',
-        Router: 'lib/vue-router',
+        React: 'lib/react.min',
+        ReactDOM: 'lib/react-dom',
 
         indexTpl: '../template/index.html'
     }
